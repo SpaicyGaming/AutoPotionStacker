@@ -1,0 +1,12 @@
+main: me.spaicygaming.autopotionstacker.AutoPotionStacker
+name: AutoPotionStacker
+author: SpaicyGaming
+website: http://bit.ly/AutoPotionStacker
+version: 1.0
+
+commands:
+  potionstacker:
+    description: Shows info.
+  potionstack:
+    description: Stack Potions.
+    aliases: pot

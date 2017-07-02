@@ -1,0 +1,22 @@
+##################################
+#    AutoPotionStacker plugin    #
+#               by               #
+#          SpaicyGaming          #
+##################################
+
+AutoPotionStacker:
+  autostack:
+    active: false
+    #In ticks. 20 ticks = 1 sec
+    delay: 10
+  drinkStackedPotions: true
+  Messages:
+    prefix: '&8[&b&oAutoPotionStacker&r&8]'
+    noPerms: '&cSorry, you don''t have enought permissions.'
+    unkCmd: '&cUnknown command. Use /potionstacker'
+    tooManyArgs: '&cToo many args. Use /potionstacker'
+    potionStacked: '&c&oPotion Stacked.'
+  
+  
+####DO NOT TOUCH###
+ConfigVersion: 1.0
