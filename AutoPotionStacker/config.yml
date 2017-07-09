@@ -10,6 +10,7 @@ AutoPotionStacker:
     #In ticks. 20 ticks = 1 sec
     delay: 10
   drinkStackedPotions: true
+  brewStackedPotions: false
   Messages:
     prefix: '&8[&b&oAutoPotionStacker&r&8]'
     noPerms: '&cSorry, you don''t have enought permissions.'
@@ -18,5 +19,6 @@ AutoPotionStacker:
     potionStacked: '&c&oPotion Stacked.'
   
   
+CheckForUpdates: true
 ####DO NOT TOUCH###
-ConfigVersion: 1.0
+ConfigVersion: 1.2
