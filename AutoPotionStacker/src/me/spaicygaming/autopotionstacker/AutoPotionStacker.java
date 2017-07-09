@@ -9,6 +9,9 @@ public class AutoPotionStacker extends JavaPlugin {
 	
 	public static AutoPotionStacker instance;
 	
+	boolean checkUpdates = getConfig().getBoolean("CheckForUpdates");
+	public Object[] updates;
+	
 	public void onEnable(){
 		instance = this;
 		getServer().getPluginManager().registerEvents(new PotionStackerListener(this), this);
@@ -19,17 +22,34 @@ public class AutoPotionStacker extends JavaPlugin {
 		getCommand("potionstacker").setExecutor(new APotionStackerCommand(this));
 		getCommand("potionstack").setExecutor(new APotionStackerCommand(this));
 		
-		//se attivo
+		//se autostack attivo
 		if (getConfig().getBoolean("AutoPotionStacker.autostack.active")){
 			getServer().getScheduler().runTaskTimer(this, new PotionStackerRunnable(), 0, getConfig().getInt("AutoPotionStacker.autostack.delay"));
 		}
 		
 		
-		if (!getConfig().getString("ConfigVersion").equals("1.0")) {
+		if (!getConfig().getString("ConfigVersion").equals("1.2")) {
 			getLogger().warning("########################################################");
 	        getLogger().warning("OUTDATED CONFIG FILE DETECTED, PLEASE DELETE THE OLD ONE!");
 	        getLogger().warning("########################################################");
 	    }
+		
+		//updates
+		updates = UpdateChecker.getLastUpdate();
+		
+		if (checkUpdates){
+			getLogger().info("Checking for updates...");
+			
+			if (updates.length == 2){
+				getLogger().info(Separatori(70));
+				getLogger().info("Update found! Download here: " + "https://www.spigotmc.org/resources/autopotionstacker.43227/");
+				getLogger().info("New version: " + updates[0]);
+				getLogger().info("What's new: " + updates[1]);
+				getLogger().info(Separatori(70));
+			} else {
+				getLogger().info("No new version available." );
+			}
+		}	
 	}
 	
 	public void onDisable(){
@@ -81,6 +101,14 @@ public class AutoPotionStacker extends JavaPlugin {
         	}
         }
 		
+	}
+	
+	public String Separatori(int value){
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < value; i++){
+			sb.append("=");
+		}
+		return sb.toString();
 	}
 
 }
