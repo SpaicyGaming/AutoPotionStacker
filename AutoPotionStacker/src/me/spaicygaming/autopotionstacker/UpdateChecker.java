@@ -15,7 +15,6 @@ public class UpdateChecker{
 		main = APSPlugin;
 	}
 	
-	//Something went wrong while downloading an update
 	final static String VERSION_URL = "https://api.spiget.org/v2/resources/43227/versions?size=" + Integer.MAX_VALUE + "&spiget__ua=SpigetDocs";
 	final static String DESCRIPTION_URL = "https://api.spiget.org/v2/resources/43227/updates?size=" + Integer.MAX_VALUE + "&spiget__ua=SpigetDocs";
 	
